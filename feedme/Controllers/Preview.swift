@@ -20,7 +20,16 @@ struct SwiftUIViewControllerWrapper<T: UIViewController>: UIViewControllerRepres
 struct FeedControllerPreview: PreviewProvider {
     
     static var previews: some View {
+        SwiftUIViewControllerWrapper<FeedController>().ignoresSafeArea()
+    }
+    
+}
+
+struct FeedControllerPreviewOther: PreviewProvider {
+    
+    static var previews: some View {
         SwiftUIViewControllerWrapper<FeedController>()
+            .ignoresSafeArea()
     }
     
 }
