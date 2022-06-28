@@ -17,12 +17,3 @@ struct FeedControllerPreview: PreviewProvider {
     }
     
 }
-
-struct FeedControllerPreviewOther: PreviewProvider {
-    
-    static var previews: some View {
-        SwiftUIViewControllerWrapper<FeedController>()
-            .ignoresSafeArea()
-    }
-    
-}

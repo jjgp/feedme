@@ -1,10 +1,3 @@
-//
-//  feedmeUITests.swift
-//  feedmeUITests
-//
-//  Created by Jason Prasad on 6/28/22.
-//
-
 import XCTest
 
 class feedmeUITests: XCTestCase {
