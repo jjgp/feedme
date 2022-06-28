@@ -16,6 +16,7 @@
 		D2B53DAE286B1197001E0A55 /* feedmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53DAD286B1197001E0A55 /* feedmeUITests.swift */; };
 		D2B53DB0286B1197001E0A55 /* feedmeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53DAF286B1197001E0A55 /* feedmeUITestsLaunchTests.swift */; };
 		D2B53DBE286B1531001E0A55 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53DBD286B1531001E0A55 /* Preview.swift */; };
+		D2B53DC1286B1EF8001E0A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D2B53DAD286B1197001E0A55 /* feedmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedmeUITests.swift; sourceTree = "<group>"; };
 		D2B53DAF286B1197001E0A55 /* feedmeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedmeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2B53DBD286B1531001E0A55 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B53DBC286B14A8001E0A55 /* Controllers */,
+				D2B53DBF286B1ED1001E0A55 /* Preview Content */,
 				D2B53D8C286B1196001E0A55 /* AppDelegate.swift */,
 				D2B53D8E286B1196001E0A55 /* SceneDelegate.swift */,
 				D2B53D95286B1197001E0A55 /* Assets.xcassets */,
@@ -133,6 +136,14 @@
 				D2B53DBD286B1531001E0A55 /* Preview.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2B53DBF286B1ED1001E0A55 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B53DC1286B1EF8001E0A55 /* Preview Assets.xcassets in Resources */,
 				D2B53D99286B1197001E0A55 /* LaunchScreen.storyboard in Resources */,
 				D2B53D96286B1197001E0A55 /* Assets.xcassets in Resources */,
 			);
@@ -437,6 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"feedme/Preview Content\"";
 				DEVELOPMENT_TEAM = SZBVKVY4W2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = feedme/Info.plist;
@@ -464,6 +477,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"feedme/Preview Content\"";
 				DEVELOPMENT_TEAM = SZBVKVY4W2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = feedme/Info.plist;

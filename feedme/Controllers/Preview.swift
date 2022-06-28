@@ -1,10 +1,3 @@
-//
-//  Previews.swift
-//  feedme
-//
-//  Created by Jason Prasad on 6/28/22.
-//
-
 import SwiftUI
 
 struct SwiftUIViewControllerWrapper<T: UIViewController>: UIViewControllerRepresentable {
