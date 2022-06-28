@@ -1,19 +1,11 @@
-//
-//  ViewController.swift
-//  feedme
-//
-//  Created by Jason Prasad on 6/28/22.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
-
+class FeedController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = .red
     }
-
-
+    
 }
-
