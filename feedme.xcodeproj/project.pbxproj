@@ -17,6 +17,7 @@
 		D2B53DB0286B1197001E0A55 /* FeedmeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53DAF286B1197001E0A55 /* FeedmeUITestsLaunchTests.swift */; };
 		D2B53DC1286B1EF8001E0A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */; };
 		D2BCF6D1286E629F00379456 /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BCF6D0286E629F00379456 /* FeedTableView.swift */; };
+		D2F7A317286F04C400E01035 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7A316286F04C400E01035 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D2B53DAF286B1197001E0A55 /* FeedmeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedmeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2BCF6D0286E629F00379456 /* FeedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
+		D2F7A316286F04C400E01035 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		D2B53D8B286B1196001E0A55 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D2F7A311286F046900E01035 /* Store */,
 				D2B53D9A286B1197001E0A55 /* Info.plist */,
 				D2B53D8C286B1196001E0A55 /* AppDelegate.swift */,
 				D2B53D8E286B1196001E0A55 /* SceneDelegate.swift */,
@@ -124,7 +127,7 @@
 		D2B53DA2286B1197001E0A55 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D2B53DA3286B1197001E0A55 /* StoreTests.swift */,
+				D2F7A314286F048C00E01035 /* iOS */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -152,6 +155,30 @@
 				D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D2F7A311286F046900E01035 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7A316286F04C400E01035 /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		D2F7A314286F048C00E01035 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7A315286F049800E01035 /* Store */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D2F7A315286F049800E01035 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D2B53DA3286B1197001E0A55 /* StoreTests.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +314,7 @@
 			files = (
 				D2B53D91286B1196001E0A55 /* FeedController.swift in Sources */,
 				D2BCF6D1286E629F00379456 /* FeedTableView.swift in Sources */,
+				D2F7A317286F04C400E01035 /* Store.swift in Sources */,
 				D2B53D8D286B1196001E0A55 /* AppDelegate.swift in Sources */,
 				D2B53D8F286B1196001E0A55 /* SceneDelegate.swift in Sources */,
 			);

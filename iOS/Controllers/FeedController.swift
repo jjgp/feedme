@@ -61,7 +61,11 @@ class FeedController: UIViewController {
 #if DEBUG
     import SwiftUI
 
-    struct FeedControllerRepresentable: UIViewControllerRepresentable {
+    struct FeedControllerRepresentable: PreviewProvider, UIViewControllerRepresentable {
+        static var previews: some View {
+            FeedControllerRepresentable().ignoresSafeArea()
+        }
+
         func makeUIViewController(context _: Context) -> FeedController {
             FeedController()
         }
@@ -69,11 +73,5 @@ class FeedController: UIViewController {
         func updateUIViewController(_: FeedController, context _: Context) {}
 
         typealias UIViewControllerType = FeedController
-    }
-
-    struct FeedControllerPreview: PreviewProvider {
-        static var previews: some View {
-            FeedControllerRepresentable().ignoresSafeArea()
-        }
     }
 #endif
