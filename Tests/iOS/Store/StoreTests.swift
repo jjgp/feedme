@@ -60,6 +60,15 @@ class StoreTests: XCTestCase {
         sut.send(.initialize)
         XCTAssertEqual(spy.values, [nil, Count()])
     }
+
+    func testUpdatingCount() async {
+        let sut = makeSut(initialState: Count())
+        let spy = PublisherSpy(sut.$state)
+        sut.send(.increment(10))
+        sut.send(.decrement(20))
+        let values = spy.values.map { $0?.count }
+        XCTAssertEqual(values, [0, 10, -10])
+    }
 }
 
 // MARK: - Test Helpers
@@ -67,8 +76,38 @@ class StoreTests: XCTestCase {
 struct Count: State {
     var count = 0
 
-    enum Action: String {
-        case initialize, increment, decrement
+    enum Action {
+        case initialize, increment(Int), decrement(Int)
+    }
+}
+
+extension Count.Action: RawRepresentable {
+    typealias RawValue = String
+
+    public init?(rawValue: RawValue) {
+        let components = rawValue.components(separatedBy: ",")
+        let value = components.count == 2 ? components.last.flatMap(Int.init) : nil
+
+        if components.first == "initialize" {
+            self = .initialize
+        } else if components.first == "increment", let value = value {
+            self = .increment(value)
+        } else if components.first == "decrement", let value = value {
+            self = .decrement(value)
+        } else {
+            return nil
+        }
+    }
+
+    var rawValue: String {
+        switch self {
+        case .initialize:
+            return "initialize"
+        case let .increment(value):
+            return "increment,\(value)"
+        case let .decrement(value):
+            return "decrement,\(value)"
+        }
     }
 }
 
@@ -76,12 +115,12 @@ private func reducer(state: inout Count?, action: Count.Action) -> Count {
     switch action {
     case .initialize:
         return Count()
-    case .increment:
-        state?.count += 1
-    case .decrement:
-        state?.count -= 1
+    case let .increment(value):
+        state?.count += value
+    case let .decrement(value):
+        state?.count -= value
     }
-    return Count()
+    return state ?? Count()
 }
 
 private func makeSut(initialState: Count? = nil) -> Store<Count> {
