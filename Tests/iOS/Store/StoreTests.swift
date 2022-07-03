@@ -54,7 +54,7 @@ final class Store<S: State>: StatePublisher, ActionSender {
 }
 
 class StoreTests: XCTestCase {
-    func testInitialState() async {
+    func testInitialize() async {
         let sut = makeSut()
         let spy = PublisherSpy(sut.$state)
         sut.send(.initialize)
@@ -73,18 +73,15 @@ struct Count: State {
 }
 
 private func reducer(state: inout Count?, action: Count.Action) -> Count {
-    var state = state ?? Count()
-
     switch action {
-    case .increment:
-        state.count += 1
-    case .decrement:
-        state.count -= 1
-    default:
+    case .initialize:
         return Count()
+    case .increment:
+        state?.count += 1
+    case .decrement:
+        state?.count -= 1
     }
-
-    return state
+    return Count()
 }
 
 private func makeSut(initialState: Count? = nil) -> Store<Count> {
