@@ -1,8 +1,6 @@
 import UIKit
 
 class FeedTableView: UITableView {
-    let reuseIdentifier = "\(FeedTableView.self)Cell"
-
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
 
@@ -17,8 +15,11 @@ class FeedTableView: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func dequeueReusableCell(for indexPath: IndexPath) -> UITableViewCell {
-        dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+    func dequeueReusableCell(for indexPath: IndexPath) -> FeedRedditTableViewCell {
+        guard let cell = dequeueReusableCell(withIdentifier: FeedRedditTableViewCell.reuseIdentifier, for: indexPath) as? FeedRedditTableViewCell else {
+            fatalError()
+        }
+        return cell
     }
 }
 
@@ -33,14 +34,18 @@ extension FeedTableView: UITableViewDataSource {
         }
 
         let cell = tableView.dequeueReusableCell(for: indexPath)
-        cell.textLabel?.text = "foobar"
+        cell.titleLabel.text = "alkjflkjlefja;lkfjelakfjlakejflkejaelkfjlakjeflkjaelfkjaelkjflekajf;lakjfl;kjael;fkjelakjflakjefl;jlkfja;lkfjelakfjlkajfljefalkjflejaflkejflkejflke"
         return cell
     }
 }
 
 extension FeedTableView: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        45
+        UITableView.automaticDimension
+    }
+
+    func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
     }
 }
 

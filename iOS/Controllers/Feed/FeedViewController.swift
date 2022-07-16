@@ -1,6 +1,6 @@
 import UIKit
 
-class FeedController: UIViewController {
+class FeedViewController: UIViewController {
     lazy var tableView = FeedTableView()
 
     override func viewDidLoad() {
@@ -8,7 +8,9 @@ class FeedController: UIViewController {
         addSubviews()
         addConstraints()
     }
+}
 
+extension FeedViewController {
     func addConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraints([
@@ -61,17 +63,17 @@ class FeedController: UIViewController {
 #if DEBUG
     import SwiftUI
 
-    struct FeedControllerRepresentable: PreviewProvider, UIViewControllerRepresentable {
+    struct FeedViewControllerRepresentable: PreviewProvider, UIViewControllerRepresentable {
         static var previews: some View {
-            FeedControllerRepresentable().ignoresSafeArea()
+            FeedViewControllerRepresentable().ignoresSafeArea()
         }
 
-        func makeUIViewController(context _: Context) -> FeedController {
-            FeedController()
+        func makeUIViewController(context _: Context) -> FeedViewController {
+            FeedViewController()
         }
 
-        func updateUIViewController(_: FeedController, context _: Context) {}
+        func updateUIViewController(_: FeedViewController, context _: Context) {}
 
-        typealias UIViewControllerType = FeedController
+        typealias UIViewControllerType = FeedViewController
     }
 #endif
