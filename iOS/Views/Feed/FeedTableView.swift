@@ -4,7 +4,7 @@ class FeedTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
 
-        register(FeedRedditTableViewCell.self, forCellReuseIdentifier: FeedRedditTableViewCell.reuseIdentifier)
+        register(RedditListingTableViewCell.self, forCellReuseIdentifier: RedditListingTableViewCell.reuseIdentifier)
 
         dataSource = self
         delegate = self
@@ -15,8 +15,8 @@ class FeedTableView: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func dequeueReusableCell(for indexPath: IndexPath) -> FeedRedditTableViewCell {
-        guard let cell = dequeueReusableCell(withIdentifier: FeedRedditTableViewCell.reuseIdentifier, for: indexPath) as? FeedRedditTableViewCell else {
+    func dequeueReusableCell(for indexPath: IndexPath) -> RedditListingTableViewCell {
+        guard let cell = dequeueReusableCell(withIdentifier: RedditListingTableViewCell.reuseIdentifier, for: indexPath) as? RedditListingTableViewCell else {
             fatalError()
         }
         return cell
@@ -33,8 +33,9 @@ extension FeedTableView: UITableViewDataSource {
             fatalError("tableView is not a \(FeedTableView.self)")
         }
 
+        let model = RedditListingViewModel()
         let cell = tableView.dequeueReusableCell(for: indexPath)
-        cell.titleLabel.text = "alkjflkjlefja;lkfjelakfjlakejflkejaelkfjlakjeflkjaelfkjaelkjflekajf;lakjfl;kjael;fkjelakjflakjefl;jlkfja;lkfjelakfjlkajfljefalkjflejaflkejflkejflke"
+        cell.bind(to: model)
         return cell
     }
 }

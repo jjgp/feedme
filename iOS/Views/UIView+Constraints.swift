@@ -3,7 +3,7 @@ import UIKit
 extension UIView {
     func constrain(
         _ attribute: NSLayoutConstraint.Attribute,
-        on item: Any!,
+        on item: Any,
         _ otherAttribute: NSLayoutConstraint.Attribute? = nil,
         relation: NSLayoutConstraint.Relation = .equal,
         multiplier: CGFloat = 1,

@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		D202D6B42882D06A00EE3224 /* Roots in Frameworks */ = {isa = PBXBuildFile; productRef = D202D6B32882D06A00EE3224 /* Roots */; };
 		D202D6B72882D12100EE3224 /* I18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202D6B62882D12100EE3224 /* I18n.swift */; };
-		D202D6B92882D26000EE3224 /* FeedRedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */; };
+		D202D6B92882D26000EE3224 /* RedditListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202D6B82882D26000EE3224 /* RedditListingTableViewCell.swift */; };
 		D202D6C02882D44700EE3224 /* I18n+Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202D6BF2882D44700EE3224 /* I18n+Feed.swift */; };
+		D27C73E528846F01003658CD /* RedditListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C73E428846F01003658CD /* RedditListingViewModel.swift */; };
 		D2ABAE282883560F00B43776 /* IntrinsicContentSizeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABAE272883560F00B43776 /* IntrinsicContentSizeWrapper.swift */; };
 		D2ABAE2A28843B3D00B43776 /* UIKit+PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABAE2928843B3D00B43776 /* UIKit+PreviewProvider.swift */; };
 		D2ABAE2C2884428500B43776 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABAE2B2884428500B43776 /* UIView+Constraints.swift */; };
@@ -46,8 +47,9 @@
 
 /* Begin PBXFileReference section */
 		D202D6B62882D12100EE3224 /* I18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18n.swift; sourceTree = "<group>"; };
-		D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRedditTableViewCell.swift; sourceTree = "<group>"; };
+		D202D6B82882D26000EE3224 /* RedditListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditListingTableViewCell.swift; sourceTree = "<group>"; };
 		D202D6BF2882D44700EE3224 /* I18n+Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "I18n+Feed.swift"; sourceTree = "<group>"; };
+		D27C73E428846F01003658CD /* RedditListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditListingViewModel.swift; sourceTree = "<group>"; };
 		D2ABAE272883560F00B43776 /* IntrinsicContentSizeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicContentSizeWrapper.swift; sourceTree = "<group>"; };
 		D2ABAE2928843B3D00B43776 /* UIKit+PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+PreviewProvider.swift"; sourceTree = "<group>"; };
 		D2ABAE2B2884428500B43776 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
@@ -115,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D2BCF6D0286E629F00379456 /* FeedTableView.swift */,
-				D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */,
+				D202D6B82882D26000EE3224 /* RedditListingTableViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 		D202D6BE2882D43300EE3224 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				D27C73E428846F01003658CD /* RedditListingViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -371,12 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2B53D91286B1196001E0A55 /* FeedViewController.swift in Sources */,
+				D27C73E528846F01003658CD /* RedditListingViewModel.swift in Sources */,
 				D2ABAE282883560F00B43776 /* IntrinsicContentSizeWrapper.swift in Sources */,
 				D2ABAE2A28843B3D00B43776 /* UIKit+PreviewProvider.swift in Sources */,
 				D202D6C02882D44700EE3224 /* I18n+Feed.swift in Sources */,
 				D2ABAE2C2884428500B43776 /* UIView+Constraints.swift in Sources */,
 				D2BCF6D1286E629F00379456 /* FeedTableView.swift in Sources */,
-				D202D6B92882D26000EE3224 /* FeedRedditTableViewCell.swift in Sources */,
+				D202D6B92882D26000EE3224 /* RedditListingTableViewCell.swift in Sources */,
 				D2F7A317286F04C400E01035 /* Store.swift in Sources */,
 				D2B53D8D286B1196001E0A55 /* AppDelegate.swift in Sources */,
 				D2B53D8F286B1196001E0A55 /* SceneDelegate.swift in Sources */,
