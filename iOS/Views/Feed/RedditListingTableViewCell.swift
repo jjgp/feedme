@@ -1,8 +1,8 @@
-import Combine
+import class Combine.AnyCancellable
 import UIKit
 
 class RedditListingTableViewCell: UITableViewCell {
-    private var cancellables: Set<AnyCancellable>!
+    private var subscriptions: Set<AnyCancellable>!
     static let reuseIdentifier = String(describing: RedditListingTableViewCell.self)
 
     private lazy var subredditLabel = UILabel()
@@ -55,7 +55,7 @@ extension RedditListingTableViewCell {
 extension RedditListingTableViewCell {
     func bind(to viewModel: RedditListingViewModel) {
         prepareLabelsForUse()
-        cancellables = [
+        subscriptions = [
             viewModel.$subreddit.assign(to: \.text!, on: subredditLabel),
             viewModel.$title.assign(to: \.text!, on: titleLabel),
         ]
@@ -65,7 +65,7 @@ extension RedditListingTableViewCell {
 extension RedditListingTableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
-        cancellables.forEach { $0.cancel() }
+        subscriptions.forEach { $0.cancel() }
         prepareLabelsForUse()
     }
 

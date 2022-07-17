@@ -1,4 +1,4 @@
-import Combine
+import struct Combine.Published
 
 class RedditListingViewModel {
     @Published var subreddit: String

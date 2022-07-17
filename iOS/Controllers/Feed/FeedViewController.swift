@@ -1,7 +1,12 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-    lazy var tableView = FeedTableView()
+    lazy var tableView: FeedTableView = {
+        let table = FeedTableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.bind(to: FeedViewModel())
+        return table
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,7 +17,6 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController {
     func addConstraints() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraints([
             tableView.constrain(.leading, on: view!),
             tableView.constrain(.top, on: view!),
