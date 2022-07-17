@@ -78,18 +78,19 @@ extension FeedRedditTableViewCell {
     struct FeedTableViewCellRepresentable: UIViewRepresentable, PreviewProvider {
         static var previews: some View {
             FeedTableViewCellRepresentable()
-                .fixedSize(horizontal: false, vertical: true)
+                .fixedIntrinsicContentSize()
                 .ignoresSafeArea()
         }
 
         func makeUIView(context _: Context) -> UIViewType {
             let cell = FeedRedditTableViewCell()
-            cell.titleLabel.text = "foobar"
-            return IntrinsicContentHeightView<FeedRedditTableViewCell>(cell)
+            cell.titleLabel.text = "foobarfoobar\n\n"
+            cell.backgroundColor = .red
+            return IntrinsicContentHeightView(cell)
         }
 
         func updateUIView(_: UIViewType, context _: Context) {}
 
-        typealias UIViewType = IntrinsicContentHeightView<FeedRedditTableViewCell>
+        typealias UIViewType = IntrinsicContentHeightView
     }
 #endif

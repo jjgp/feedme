@@ -2,7 +2,7 @@ import UIKit
 
 // TODO: https://stackoverflow.com/a/67830370
 
-class IntrinsicContentSizeWrapper<WrappedView: UIView>: UIView {
+class IntrinsicContentSizeWrapper: UIView {
     override var frame: CGRect {
         didSet {
             guard frame != oldValue else { return }
@@ -19,7 +19,7 @@ class IntrinsicContentSizeWrapper<WrappedView: UIView>: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        fatalError("targetSize has not been implemented in subclass")
+        fatalError("intrinsicContentSize must be implemented in subclass")
     }
 
     var systemLayoutSize: CGSize = .zero {
@@ -27,12 +27,12 @@ class IntrinsicContentSizeWrapper<WrappedView: UIView>: UIView {
     }
 
     var targetSize: CGSize {
-        fatalError("targetSize has not been implemented in subclass")
+        fatalError("targetSize must be implemented in subclass")
     }
 
-    var wrappedView: WrappedView
+    var wrappedView: UIView
 
-    init(_ wrappedView: WrappedView) {
+    init(_ wrappedView: UIView) {
         self.wrappedView = wrappedView
         super.init(frame: .zero)
         addSubview(wrappedView)
@@ -44,7 +44,7 @@ class IntrinsicContentSizeWrapper<WrappedView: UIView>: UIView {
     }
 }
 
-class IntrinsicContentHeightView<WrappedView: UIView>: IntrinsicContentSizeWrapper<WrappedView> {
+class IntrinsicContentHeightView: IntrinsicContentSizeWrapper {
     override var intrinsicContentSize: CGSize {
         .init(width: UIView.noIntrinsicMetric, height: systemLayoutSize.height)
     }
@@ -54,7 +54,7 @@ class IntrinsicContentHeightView<WrappedView: UIView>: IntrinsicContentSizeWrapp
     }
 }
 
-class IntrinsicContentWidthView<WrappedView: UIView>: IntrinsicContentSizeWrapper<WrappedView> {
+class IntrinsicContentWidthView: IntrinsicContentSizeWrapper {
     override var intrinsicContentSize: CGSize {
         .init(width: systemLayoutSize.width, height: UIView.noIntrinsicMetric)
     }
