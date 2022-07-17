@@ -14,42 +14,10 @@ extension FeedViewController {
     func addConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraints([
-            .init(
-                item: tableView,
-                attribute: .top,
-                relatedBy: .equal,
-                toItem: view,
-                attribute: .top,
-                multiplier: 1,
-                constant: 0
-            ),
-            .init(
-                item: tableView,
-                attribute: .bottom,
-                relatedBy: .equal,
-                toItem: view,
-                attribute: .bottom,
-                multiplier: 1,
-                constant: 0
-            ),
-            .init(
-                item: tableView,
-                attribute: .leading,
-                relatedBy: .equal,
-                toItem: view,
-                attribute: .leading,
-                multiplier: 1,
-                constant: 0
-            ),
-            .init(
-                item: tableView,
-                attribute: .trailing,
-                relatedBy: .equal,
-                toItem: view,
-                attribute: .trailing,
-                multiplier: 1,
-                constant: 0
-            ),
+            tableView.constrain(.leading, on: view),
+            tableView.constrain(.top, on: view),
+            tableView.constrain(.trailing, on: view),
+            tableView.constrain(.bottom, on: view),
         ])
     }
 

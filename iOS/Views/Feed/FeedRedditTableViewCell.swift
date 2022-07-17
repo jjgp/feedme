@@ -6,7 +6,6 @@ class FeedRedditTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -25,43 +24,12 @@ class FeedRedditTableViewCell: UITableViewCell {
 
 extension FeedRedditTableViewCell {
     func addConstrants() {
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addConstraints([
-            .init(
-                item: titleLabel,
-                attribute: .leading,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .leadingMargin,
-                multiplier: 1,
-                constant: 0
-            ),
-            .init(
-                item: titleLabel,
-                attribute: .top,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .topMargin,
-                multiplier: 1,
-                constant: 0
-            ),
-            .init(
-                item: titleLabel,
-                attribute: .trailing,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .trailingMargin,
-                multiplier: 1,
-                constant: 0
-            ),
-            .init(
-                item: titleLabel,
-                attribute: .bottom,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .bottomMargin,
-                multiplier: 1,
-                constant: 0
-            ),
+            titleLabel.constrain(.leading, on: contentView, .leadingMargin),
+            titleLabel.constrain(.top, on: contentView, .topMargin),
+            titleLabel.constrain(.trailing, on: contentView, .trailingMargin),
+            titleLabel.constrain(.bottom, on: contentView, .bottomMargin),
         ])
     }
 
