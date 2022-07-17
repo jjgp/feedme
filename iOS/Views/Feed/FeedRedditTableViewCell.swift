@@ -9,6 +9,14 @@ class FeedRedditTableViewCell: UITableViewCell {
         return label
     }()
 
+    lazy var verticalStack: UIStackView = {
+        let stack = UIStackView()
+        stack.addArrangedSubview(titleLabel)
+        stack.axis = .vertical
+        stack.distribution = .fill
+        return stack
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         let reuseIdentifier = reuseIdentifier ?? Self.reuseIdentifier
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,17 +32,17 @@ class FeedRedditTableViewCell: UITableViewCell {
 
 extension FeedRedditTableViewCell {
     func addConstrants() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        verticalStack.translatesAutoresizingMaskIntoConstraints = false
         contentView.addConstraints([
-            titleLabel.constrain(.leading, on: contentView, .leadingMargin),
-            titleLabel.constrain(.top, on: contentView, .topMargin),
-            titleLabel.constrain(.trailing, on: contentView, .trailingMargin),
-            titleLabel.constrain(.bottom, on: contentView, .bottomMargin),
+            verticalStack.constrain(.leading, on: contentView, .leadingMargin),
+            verticalStack.constrain(.top, on: contentView, .topMargin),
+            verticalStack.constrain(.trailing, on: contentView, .trailingMargin),
+            verticalStack.constrain(.bottom, on: contentView, .bottomMargin),
         ])
     }
 
     func addSubviews() {
-        contentView.addSubview(titleLabel)
+        contentView.addSubview(verticalStack)
     }
 }
 
@@ -45,14 +53,12 @@ extension FeedRedditTableViewCell {
 
     struct FeedTableViewCellRepresentable: UIViewRepresentable, PreviewProvider {
         static var previews: some View {
-            FeedTableViewCellRepresentable()
-                .fixedIntrinsicContentSize()
-                .ignoresSafeArea()
+            FeedTableViewCellRepresentable().fixedIntrinsicContentSize()
         }
 
         func makeUIView(context _: Context) -> UIViewType {
             let cell = FeedRedditTableViewCell()
-            cell.titleLabel.text = "foobarfoobar\n\n"
+            cell.titleLabel.text = "\nfoobarfoobar\n"
             cell.backgroundColor = .red
             return IntrinsicContentHeightView(cell)
         }
