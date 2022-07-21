@@ -3,6 +3,12 @@ struct FeedRedditViewModel {
     let title: String
 }
 
+extension RedditModel.Child {
+    func toFeedRedditViewModel() -> FeedRedditViewModel {
+        .init(subreddit: subredditNamePrefixed, title: title)
+    }
+}
+
 #if DEBUG
     extension FeedRedditViewModel {
         static func mock() -> Self {

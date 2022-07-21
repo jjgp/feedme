@@ -39,7 +39,8 @@ extension FeedTableView: UITableViewDataSource {
 
         switch viewModel.items[indexPath.row] {
         case let .reddit(model):
-            let cell: FeedRedditTableViewCell = tableView.dequeueReusableCellOfType(withIdentifier: .reuseIdentifierForRedditCell, for: indexPath)
+            let cell: FeedRedditTableViewCell = tableView
+                .dequeueReusableCellOfType(withIdentifier: .reuseIdentifierForRedditCell, for: indexPath)
             cell.setViewModel(model)
             return cell
         }

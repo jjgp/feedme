@@ -1,5 +1,4 @@
-import protocol Combine.ObservableObject
-import struct Combine.Published
+import Combine
 
 class FeedViewModel: ObservableObject {
     @Published var items: [FeedItem]
@@ -18,9 +17,17 @@ extension FeedViewModel {
 }
 
 #if DEBUG
+    import UIKit
+
     extension FeedViewModel {
         static func mock() -> FeedViewModel {
-            .init(items: [.reddit(.mock())])
+            let asset = NSDataAsset(name: "reddit", bundle: .main)
+            let data = asset!.data
+            let listing = try? JSONDecoder().decode(RedditModel.Listing.self, from: data)
+            let items = listing!.children.map { child -> FeedViewModel.FeedItem in
+                .reddit(child.toFeedRedditViewModel())
+            }
+            return .init(items: items)
         }
     }
 #endif
