@@ -1,15 +1,29 @@
+import Combine
 import UIKit
 
 class FeedViewController: UIViewController {
-    lazy var tableView: FeedTableView = {
-        let table = FeedTableView(frame: .zero, style: .plain)
+    private var subscription: AnyCancellable!
+
+    private lazy var tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .plain)
+        table.dataSource = self
+        table.delegate = self
+        table.register(
+            FeedRedditTableViewCell.self,
+            forCellReuseIdentifier: .reuseIdentifierForRedditCell
+        )
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
 
+    private var viewModel: FeedViewModel!
+
     init(viewModel: FeedViewModel = FeedViewModel()) {
         super.init(nibName: nil, bundle: nil)
-        tableView.setViewModel(viewModel)
+        self.viewModel = viewModel
+        subscription = viewModel.objectWillChange.sink { [weak self] _ in
+            self?.tableView.reloadData()
+        }
     }
 
     @available(*, unavailable)
@@ -23,6 +37,7 @@ extension FeedViewController {
         super.viewDidLoad()
         addSubviews()
         addConstraints()
+        viewModel.fetchItems()
     }
 }
 
@@ -38,6 +53,42 @@ extension FeedViewController {
 
     func addSubviews() {
         view.addSubview(tableView)
+    }
+}
+
+// MARK: Table View
+
+extension FeedViewController: UITableViewDataSource {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        viewModel.items.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch viewModel.items[indexPath.row] {
+        case let .reddit(model):
+            let cell: FeedRedditTableViewCell = tableView
+                .dequeueReusableCellOfType(withIdentifier: .reuseIdentifierForRedditCell, for: indexPath)
+            cell.setViewModel(model)
+            return cell
+        }
+    }
+}
+
+extension FeedViewController: UITableViewDelegate {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+
+    func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+}
+
+// MARK: Reuse Identifiers
+
+private extension String {
+    static var reuseIdentifierForRedditCell: String {
+        String(describing: FeedRedditTableViewCell.self)
     }
 }
 
