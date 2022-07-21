@@ -2,12 +2,23 @@ import UIKit
 
 class FeedViewController: UIViewController {
     lazy var tableView: FeedTableView = {
-        let table = FeedTableView()
+        let table = FeedTableView(frame: .zero, style: .plain)
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.bind(to: FeedViewModel())
         return table
     }()
 
+    init(viewModel: FeedViewModel = FeedViewModel()) {
+        super.init(nibName: nil, bundle: nil)
+        tableView.setViewModel(viewModel)
+    }
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension FeedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -41,7 +52,7 @@ extension FeedViewController {
         }
 
         func makeUIViewController(context _: Context) -> FeedViewController {
-            FeedViewController()
+            FeedViewController(viewModel: .mock())
         }
 
         func updateUIViewController(_: FeedViewController, context _: Context) {}

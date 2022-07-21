@@ -1,15 +1,13 @@
-import class Combine.AnyCancellable
+import Combine
 import UIKit
 
 class FeedTableView: UITableView {
-    private var viewModel: FeedViewModel!
     private var subscription: AnyCancellable!
+    private var viewModel: FeedViewModel!
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-
-        register(RedditListingTableViewCell.self, forCellReuseIdentifier: RedditListingTableViewCell.reuseIdentifier)
-
+        register(FeedRedditTableViewCell.self, forCellReuseIdentifier: .reuseIdentifierForRedditCell)
         dataSource = self
         delegate = self
     }
@@ -17,6 +15,15 @@ class FeedTableView: UITableView {
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension FeedTableView {
+    override func willMove(toSuperview newSuperview: UIView?) {
+        if newSuperview != nil {
+            viewModel.fetchItems()
+        }
+        super.willMove(toSuperview: newSuperview)
     }
 }
 
@@ -30,17 +37,12 @@ extension FeedTableView: UITableViewDataSource {
             fatalError("tableView is not a \(FeedTableView.self)")
         }
 
-        let cell: UITableViewCell
         switch viewModel.items[indexPath.row] {
         case let .reddit(model):
-            guard let redditCell = tableView.dequeueReusableCell(withIdentifier: RedditListingTableViewCell.reuseIdentifier, for: indexPath) as? RedditListingTableViewCell else {
-                fatalError("\(RedditListingTableViewCell.reuseIdentifier) has not been registered")
-            }
-            redditCell.bind(to: model)
-            cell = redditCell
+            let cell: FeedRedditTableViewCell = tableView.dequeueReusableCellOfType(withIdentifier: .reuseIdentifierForRedditCell, for: indexPath)
+            cell.setViewModel(model)
+            return cell
         }
-
-        return cell
     }
 }
 
@@ -55,14 +57,19 @@ extension FeedTableView: UITableViewDelegate {
 }
 
 extension FeedTableView {
-    func bind(to viewModel: FeedViewModel) {
-        subscription?.cancel()
+    func setViewModel(_ viewModel: FeedViewModel) {
         self.viewModel = viewModel
-        subscription = viewModel.$items.sink { [weak self] _ in
+        subscription = viewModel.objectWillChange.sink { [weak self] _ in
             self?.reloadData()
         }
-        // TODO: only fetch when moved to superview
-        viewModel.fetchItems()
+    }
+}
+
+// MARK: Reuse Identifiers
+
+private extension String {
+    static var reuseIdentifierForRedditCell: String {
+        String(describing: FeedRedditTableViewCell.self)
     }
 }
 
@@ -78,7 +85,7 @@ extension FeedTableView {
 
         func makeUIView(context _: Context) -> FeedTableView {
             let view = FeedTableView()
-            view.bind(to: FeedViewModel())
+            view.setViewModel(.mock())
             return view
         }
 

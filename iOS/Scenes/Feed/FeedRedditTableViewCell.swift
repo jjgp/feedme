@@ -1,10 +1,6 @@
-import class Combine.AnyCancellable
 import UIKit
 
-class RedditListingTableViewCell: UITableViewCell {
-    private var subscriptions: Set<AnyCancellable>!
-    static let reuseIdentifier = String(describing: RedditListingTableViewCell.self)
-
+class FeedRedditTableViewCell: UITableViewCell {
     private lazy var subredditLabel = UILabel()
 
     private lazy var titleLabel: UILabel = {
@@ -26,7 +22,7 @@ class RedditListingTableViewCell: UITableViewCell {
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier ?? Self.reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
         addConstrants()
     }
@@ -37,7 +33,7 @@ class RedditListingTableViewCell: UITableViewCell {
     }
 }
 
-extension RedditListingTableViewCell {
+extension FeedRedditTableViewCell {
     func addConstrants() {
         contentView.addConstraints([
             verticalStack.constrain(.leading, on: contentView, .leadingMargin),
@@ -52,24 +48,16 @@ extension RedditListingTableViewCell {
     }
 }
 
-extension RedditListingTableViewCell {
-    func bind(to viewModel: RedditListingViewModel) {
-        prepareLabelsForUse()
-        subscriptions = [
-            viewModel.$subreddit.assign(to: \.text!, on: subredditLabel),
-            viewModel.$title.assign(to: \.text!, on: titleLabel),
-        ]
+extension FeedRedditTableViewCell {
+    func setViewModel(_ viewModel: FeedRedditViewModel) {
+        subredditLabel.text = viewModel.subreddit
+        titleLabel.text = viewModel.title
     }
 }
 
-extension RedditListingTableViewCell {
+extension FeedRedditTableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
-        subscriptions.forEach { $0.cancel() }
-        prepareLabelsForUse()
-    }
-
-    func prepareLabelsForUse() {
         subredditLabel.text = ""
         titleLabel.text = ""
     }
@@ -86,13 +74,8 @@ extension RedditListingTableViewCell {
         }
 
         func makeUIView(context _: Context) -> UIViewType {
-            let model = RedditListingViewModel()
-            let cell = RedditListingTableViewCell()
-            cell.bind(to: model)
-            model.subreddit = "r/todayilearned"
-            model.title = "TIL Michael Jackson wore white tape on his fingers so that audience members further away" +
-                "could see the fingers and follow the moves he made with his hands while dancing. He wore white" +
-                "socks so they could similarly follow his feet."
+            let cell = FeedRedditTableViewCell()
+            cell.setViewModel(.mock())
             return IntrinsicContentHeightView(cell)
         }
 
