@@ -1,11 +1,13 @@
+import Foundation
+
 enum RedditModel {
     struct Child {
         let id: String
         let subreddit: String
         let subredditNamePrefixed: String
         let title: String
-        let thumbnail: String
-        let url: String
+        let thumbnail: URL
+        let url: URL
     }
 
     enum ChildKeys: String, CodingKey {
@@ -28,7 +30,9 @@ enum RedditModel {
     }
 
     enum ListingKeys: String, CodingKey {
-        case after, before, children
+        case after
+        case before
+        case children
     }
 }
 
@@ -54,7 +58,7 @@ extension RedditModel.Child: Decodable {
         subreddit = try container.decode(String.self, forKey: .subreddit)
         subredditNamePrefixed = try container.decode(String.self, forKey: .subredditNamePrefixed)
         title = try container.decode(String.self, forKey: .title)
-        thumbnail = try container.decode(String.self, forKey: .thumbnail)
-        url = try container.decode(String.self, forKey: .url)
+        thumbnail = try container.decode(URL.self, forKey: .thumbnail)
+        url = try container.decode(URL.self, forKey: .url)
     }
 }
