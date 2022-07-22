@@ -21,7 +21,6 @@
 		D2B53D91286B1196001E0A55 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53D90286B1196001E0A55 /* FeedViewController.swift */; };
 		D2B53D96286B1197001E0A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B53D95286B1197001E0A55 /* Assets.xcassets */; };
 		D2B53D99286B1197001E0A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B53D97286B1197001E0A55 /* LaunchScreen.storyboard */; };
-		D2B53DA4286B1197001E0A55 /* iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53DA3286B1197001E0A55 /* iOSTests.swift */; };
 		D2B53DAE286B1197001E0A55 /* FeedmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53DAD286B1197001E0A55 /* FeedmeUITests.swift */; };
 		D2B53DB0286B1197001E0A55 /* FeedmeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B53DAF286B1197001E0A55 /* FeedmeUITestsLaunchTests.swift */; };
 		D2B53DC1286B1EF8001E0A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */; };
@@ -37,6 +36,9 @@
 		D2C8A0B8288AC02D0079FCAC /* FeedEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */; };
 		D2C8A0BC288AC1D80079FCAC /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0BB288AC1D80079FCAC /* FeedViewModelTests.swift */; };
 		D2C8A0BE288AC1F20079FCAC /* FeedRedditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0BD288AC1F20079FCAC /* FeedRedditViewModelTests.swift */; };
+		D2C8A0C0288ACAB50079FCAC /* FeedEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0BF288ACAB50079FCAC /* FeedEnvironment.swift */; };
+		D2C8A0C2288AE4CD0079FCAC /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0C1288AE4CD0079FCAC /* HTTP.swift */; };
+		D2C8A0C5288B2CBD0079FCAC /* RedditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0C4288B2CBD0079FCAC /* RedditRequest.swift */; };
 		D2F7A317286F04C400E01035 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7A316286F04C400E01035 /* Store.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +76,6 @@
 		D2B53D98286B1197001E0A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2B53D9A286B1197001E0A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B53D9F286B1197001E0A55 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2B53DA3286B1197001E0A55 /* iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTests.swift; sourceTree = "<group>"; };
 		D2B53DA9286B1197001E0A55 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B53DAD286B1197001E0A55 /* FeedmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedmeUITests.swift; sourceTree = "<group>"; };
 		D2B53DAF286B1197001E0A55 /* FeedmeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedmeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -91,6 +92,9 @@
 		D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEffect.swift; sourceTree = "<group>"; };
 		D2C8A0BB288AC1D80079FCAC /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
 		D2C8A0BD288AC1F20079FCAC /* FeedRedditViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRedditViewModelTests.swift; sourceTree = "<group>"; };
+		D2C8A0BF288ACAB50079FCAC /* FeedEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEnvironment.swift; sourceTree = "<group>"; };
+		D2C8A0C1288AE4CD0079FCAC /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		D2C8A0C4288B2CBD0079FCAC /* RedditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditRequest.swift; sourceTree = "<group>"; };
 		D2F7A316286F04C400E01035 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,8 +136,8 @@
 		D285B736286B31ED000E7257 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D2ABAE2B2884428500B43776 /* UIView+Constraints.swift */,
 				D2B769442889D16B0034E078 /* UITableView+DequeReusableCellOfType.swift */,
+				D2ABAE2B2884428500B43776 /* UIView+Constraints.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,9 +165,8 @@
 		D2B53D8B286B1196001E0A55 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2B7694D288A210E0034E078 /* App */,
 				D2B76946288A14E90034E078 /* API */,
-				D2B769422889CD210034E078 /* Scenes */,
+				D2B7694D288A210E0034E078 /* App */,
 				D2B53D8C286B1196001E0A55 /* AppDelegate.swift */,
 				D2B53D95286B1197001E0A55 /* Assets.xcassets */,
 				D2B53D9A286B1197001E0A55 /* Info.plist */,
@@ -171,6 +174,7 @@
 				D202D6B52882D10F00EE3224 /* Localization */,
 				D2B53DBF286B1ED1001E0A55 /* Preview Content */,
 				D2B53D8E286B1196001E0A55 /* SceneDelegate.swift */,
+				D2B769422889CD210034E078 /* Scenes */,
 				D285B736286B31ED000E7257 /* Views */,
 			);
 			path = iOS;
@@ -196,8 +200,8 @@
 		D2B53DBF286B1ED1001E0A55 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */,
 				D2ABAE272883560F00B43776 /* IntrinsicContentSizeWrapper.swift */,
+				D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */,
 				D2ABAE2928843B3D00B43776 /* UIKit+PreviewProvider.swift */,
 			);
 			path = "Preview Content";
@@ -214,14 +218,15 @@
 		D2B769432889CD2B0034E078 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				D2B53D90286B1196001E0A55 /* FeedViewController.swift */,
-				D27C73E628847B02003658CD /* FeedViewModel.swift */,
+				D2C8A0B3288A8E530079FCAC /* FeedAction.swift */,
+				D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */,
+				D2C8A0BF288ACAB50079FCAC /* FeedEnvironment.swift */,
 				D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */,
 				D27C73E428846F01003658CD /* FeedRedditViewModel.swift */,
-				D2C8A0AF288A88850079FCAC /* FeedState.swift */,
-				D2C8A0B3288A8E530079FCAC /* FeedAction.swift */,
 				D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */,
-				D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */,
+				D2C8A0AF288A88850079FCAC /* FeedState.swift */,
+				D2B53D90286B1196001E0A55 /* FeedViewController.swift */,
+				D27C73E628847B02003658CD /* FeedViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -229,7 +234,9 @@
 		D2B76946288A14E90034E078 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D2C8A0C1288AE4CD0079FCAC /* HTTP.swift */,
 				D2B76947288A14F50034E078 /* Models */,
+				D2C8A0C3288B2CAF0079FCAC /* Request */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -245,10 +252,10 @@
 		D2B7694D288A210E0034E078 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D2F7A316286F04C400E01035 /* Store.swift */,
+				D2C8A0B1288A8E280079FCAC /* AppAction.swift */,
 				D2B7694E288A21520034E078 /* AppEnvironment.swift */,
 				D2B76950288A215A0034E078 /* AppState.swift */,
-				D2C8A0B1288A8E280079FCAC /* AppAction.swift */,
+				D2F7A316286F04C400E01035 /* Store.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -256,7 +263,6 @@
 		D2B76952288A807E0034E078 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D2C8A0B9288AC1A00079FCAC /* Scenes */,
 				D2B76953288A80860034E078 /* Models */,
 			);
 			path = API;
@@ -287,11 +293,19 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		D2C8A0C3288B2CAF0079FCAC /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8A0C4288B2CBD0079FCAC /* RedditRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		D2F7A314286F048C00E01035 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				D2B76952288A807E0034E078 /* API */,
-				D2B53DA3286B1197001E0A55 /* iOSTests.swift */,
+				D2C8A0B9288AC1A00079FCAC /* Scenes */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -436,14 +450,17 @@
 				D2B53D91286B1196001E0A55 /* FeedViewController.swift in Sources */,
 				D27C73E528846F01003658CD /* FeedRedditViewModel.swift in Sources */,
 				D2C8A0B8288AC02D0079FCAC /* FeedEffect.swift in Sources */,
+				D2C8A0C5288B2CBD0079FCAC /* RedditRequest.swift in Sources */,
 				D2C8A0B6288ABEBC0079FCAC /* FeedReducer.swift in Sources */,
 				D2ABAE282883560F00B43776 /* IntrinsicContentSizeWrapper.swift in Sources */,
+				D2C8A0C0288ACAB50079FCAC /* FeedEnvironment.swift in Sources */,
 				D2ABAE2A28843B3D00B43776 /* UIKit+PreviewProvider.swift in Sources */,
 				D2B7694F288A21520034E078 /* AppEnvironment.swift in Sources */,
 				D202D6C02882D44700EE3224 /* I18n+Feed.swift in Sources */,
 				D2ABAE2C2884428500B43776 /* UIView+Constraints.swift in Sources */,
 				D2B76951288A215A0034E078 /* AppState.swift in Sources */,
 				D2B7694C288A151F0034E078 /* RedditModel.swift in Sources */,
+				D2C8A0C2288AE4CD0079FCAC /* HTTP.swift in Sources */,
 				D202D6B92882D26000EE3224 /* FeedRedditTableViewCell.swift in Sources */,
 				D2F7A317286F04C400E01035 /* Store.swift in Sources */,
 				D2C8A0B2288A8E280079FCAC /* AppAction.swift in Sources */,
@@ -462,7 +479,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2C8A0BE288AC1F20079FCAC /* FeedRedditViewModelTests.swift in Sources */,
-				D2B53DA4286B1197001E0A55 /* iOSTests.swift in Sources */,
 				D2C8A0BC288AC1D80079FCAC /* FeedViewModelTests.swift in Sources */,
 				D2B76955288A80980034E078 /* RedditModelTests.swift in Sources */,
 			);
