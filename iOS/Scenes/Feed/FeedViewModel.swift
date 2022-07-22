@@ -30,10 +30,10 @@ extension FeedViewModel {
             let items = listing!.children.map { child -> FeedViewModel.FeedItem in
                 .reddit(child.toFeedRedditViewModel())
             }
-            return .init(createStore: createStore, items: items)
+            return .init(createStore: mockStore, items: items)
         }
 
-        static var createStore: CreateStore {
+        static var mockStore: CreateStore {
             { _, _ in
                 .init(initialState: FeedState(), reducer: feedReducer(state:action:))
             }

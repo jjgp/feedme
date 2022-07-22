@@ -35,6 +35,8 @@
 		D2C8A0B4288A8E530079FCAC /* FeedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B3288A8E530079FCAC /* FeedAction.swift */; };
 		D2C8A0B6288ABEBC0079FCAC /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */; };
 		D2C8A0B8288AC02D0079FCAC /* FeedEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */; };
+		D2C8A0BC288AC1D80079FCAC /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0BB288AC1D80079FCAC /* FeedViewModelTests.swift */; };
+		D2C8A0BE288AC1F20079FCAC /* FeedRedditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0BD288AC1F20079FCAC /* FeedRedditViewModelTests.swift */; };
 		D2F7A317286F04C400E01035 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7A316286F04C400E01035 /* Store.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		D2C8A0B3288A8E530079FCAC /* FeedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAction.swift; sourceTree = "<group>"; };
 		D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
 		D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEffect.swift; sourceTree = "<group>"; };
+		D2C8A0BB288AC1D80079FCAC /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
+		D2C8A0BD288AC1F20079FCAC /* FeedRedditViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRedditViewModelTests.swift; sourceTree = "<group>"; };
 		D2F7A316286F04C400E01035 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +256,7 @@
 		D2B76952288A807E0034E078 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D2C8A0B9288AC1A00079FCAC /* Scenes */,
 				D2B76953288A80860034E078 /* Models */,
 			);
 			path = API;
@@ -263,6 +268,23 @@
 				D2B76954288A80980034E078 /* RedditModelTests.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D2C8A0B9288AC1A00079FCAC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8A0BA288AC1A70079FCAC /* Feed */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D2C8A0BA288AC1A70079FCAC /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8A0BB288AC1D80079FCAC /* FeedViewModelTests.swift */,
+				D2C8A0BD288AC1F20079FCAC /* FeedRedditViewModelTests.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		D2F7A314286F048C00E01035 /* iOS */ = {
@@ -439,7 +461,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C8A0BE288AC1F20079FCAC /* FeedRedditViewModelTests.swift in Sources */,
 				D2B53DA4286B1197001E0A55 /* iOSTests.swift in Sources */,
+				D2C8A0BC288AC1D80079FCAC /* FeedViewModelTests.swift in Sources */,
 				D2B76955288A80980034E078 /* RedditModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
