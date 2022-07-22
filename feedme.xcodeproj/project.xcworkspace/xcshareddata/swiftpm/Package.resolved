@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-roots",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jjgp/swift-roots",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c4216ba003a6a3b5073925266504d4aa148d077c"
+      }
+    }
+  ],
+  "version" : 2
+}
