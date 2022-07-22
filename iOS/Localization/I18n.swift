@@ -1,5 +1,7 @@
 import Foundation
 
+struct I18n {}
+
 extension String {
     static let i18n = I18n()
 
@@ -11,5 +13,3 @@ extension String {
         .localizedStringWithFormat(.t(keyPath), args)
     }
 }
-
-struct I18n {}
