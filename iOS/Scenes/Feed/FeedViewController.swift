@@ -18,7 +18,7 @@ class FeedViewController: UIViewController {
 
     private var viewModel: FeedViewModel!
 
-    init(viewModel: FeedViewModel = FeedViewModel()) {
+    init(viewModel: FeedViewModel = .mock()) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         subscription = viewModel.objectWillChange.sink { [weak self] _ in

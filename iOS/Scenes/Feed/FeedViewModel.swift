@@ -1,15 +1,18 @@
 import Combine
+import Roots
 
 class FeedViewModel: ObservableObject {
     @Published var items: [FeedItem]
 
-    init(items: [FeedItem] = []) {
+    init(createStore _: CreateStore, items: [FeedItem] = []) {
         self.items = items
     }
 
     enum FeedItem {
         case reddit(FeedRedditViewModel)
     }
+
+    typealias CreateStore = (FeedReducer, FeedEffect) -> Store<FeedState, FeedAction>
 }
 
 extension FeedViewModel {
@@ -27,7 +30,13 @@ extension FeedViewModel {
             let items = listing!.children.map { child -> FeedViewModel.FeedItem in
                 .reddit(child.toFeedRedditViewModel())
             }
-            return .init(items: items)
+            return .init(createStore: createStore, items: items)
+        }
+
+        static var createStore: CreateStore {
+            { _, _ in
+                .init(initialState: FeedState(), reducer: feedReducer(state:action:))
+            }
         }
     }
 #endif

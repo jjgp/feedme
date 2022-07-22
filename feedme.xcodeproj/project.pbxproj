@@ -33,6 +33,8 @@
 		D2C8A0B0288A88850079FCAC /* FeedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0AF288A88850079FCAC /* FeedState.swift */; };
 		D2C8A0B2288A8E280079FCAC /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B1288A8E280079FCAC /* AppAction.swift */; };
 		D2C8A0B4288A8E530079FCAC /* FeedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B3288A8E530079FCAC /* FeedAction.swift */; };
+		D2C8A0B6288ABEBC0079FCAC /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */; };
+		D2C8A0B8288AC02D0079FCAC /* FeedEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */; };
 		D2F7A317286F04C400E01035 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7A316286F04C400E01035 /* Store.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		D2C8A0AF288A88850079FCAC /* FeedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedState.swift; sourceTree = "<group>"; };
 		D2C8A0B1288A8E280079FCAC /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		D2C8A0B3288A8E530079FCAC /* FeedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAction.swift; sourceTree = "<group>"; };
+		D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
+		D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEffect.swift; sourceTree = "<group>"; };
 		D2F7A316286F04C400E01035 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +216,8 @@
 				D27C73E428846F01003658CD /* FeedRedditViewModel.swift */,
 				D2C8A0AF288A88850079FCAC /* FeedState.swift */,
 				D2C8A0B3288A8E530079FCAC /* FeedAction.swift */,
+				D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */,
+				D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -407,6 +413,8 @@
 			files = (
 				D2B53D91286B1196001E0A55 /* FeedViewController.swift in Sources */,
 				D27C73E528846F01003658CD /* FeedRedditViewModel.swift in Sources */,
+				D2C8A0B8288AC02D0079FCAC /* FeedEffect.swift in Sources */,
+				D2C8A0B6288ABEBC0079FCAC /* FeedReducer.swift in Sources */,
 				D2ABAE282883560F00B43776 /* IntrinsicContentSizeWrapper.swift in Sources */,
 				D2ABAE2A28843B3D00B43776 /* UIKit+PreviewProvider.swift in Sources */,
 				D2B7694F288A21520034E078 /* AppEnvironment.swift in Sources */,
