@@ -1,7 +1,7 @@
 import Foundation
 
 enum RedditModel {
-    struct Child {
+    struct Child: Equatable {
         let id: String
         let subreddit: String
         let subredditNamePrefixed: String
@@ -23,7 +23,7 @@ enum RedditModel {
         case data
     }
 
-    struct Listing {
+    struct Listing: Equatable {
         let after: String?
         let before: String?
         let children: [Child]
