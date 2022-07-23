@@ -47,7 +47,7 @@ struct HTTP {
 }
 
 extension HTTP {
-    func urlRequest<T>(from request: HTTPRequest<T>) throws -> URLRequest {
+    func urlRequest<T>(for request: HTTPRequest<T>) throws -> URLRequest {
         var components = URLComponents()
         components.path = request.path
         components.queryItems = request.queryParams?.map {
@@ -66,8 +66,14 @@ extension HTTP {
 }
 
 extension HTTP {
-    func requestPublisher<T>(for request: HTTPRequest<T>) throws -> AnyPublisher<T, Error> {
-        let urlRequest = try urlRequest(from: request)
+    func requestPublisher<T>(for request: HTTPRequest<T>) -> AnyPublisher<T, Error> {
+        let urlRequest: URLRequest
+        do {
+            urlRequest = try self.urlRequest(for: request)
+        } catch {
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+
         return session.dataTaskPublisher(for: urlRequest)
             .tryMap { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,

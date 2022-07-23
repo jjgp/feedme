@@ -2,21 +2,47 @@ import Combine
 import Roots
 
 class FeedViewModel: ObservableObject {
+    private var cancellables = Set<AnyCancellable>()
     @Published var items: [FeedItem]
+    private let store: Store<FeedState, FeedAction>
 
-    init(createStore _: CreateStore, items: [FeedItem] = []) {
+    init(items: [FeedItem] = [], createStore: CreateStore) {
         self.items = items
+        let http = HTTP(host: URL(string: "http://reddit.com")!, session: .shared)
+        store = createStore(
+            feedReducer(state:action:),
+            .fetchListing(with: FeedEnvironment(http: http, mainQueue: .main))
+        )
+        store.sink { [weak self] newState in
+            self?.items = newState
+                .listings
+                .flatMap(\.children)
+                .map {
+                    .reddit($0.toFeedRedditViewModel())
+                }
+        }
+        .store(in: &cancellables)
     }
 
     enum FeedItem {
         case reddit(FeedRedditViewModel)
     }
 
-    typealias CreateStore = (FeedReducer, FeedEffect) -> Store<FeedState, FeedAction>
+    typealias CreateStore = (@escaping FeedReducer, FeedEffect) -> Store<FeedState, FeedAction>
 }
 
 extension FeedViewModel {
-    func fetchItems() {}
+    func fetchItems() {
+        store.send(.fetchListing)
+    }
+}
+
+extension FeedViewModel {
+    static func live() -> FeedViewModel {
+        .init { reducer, effect in
+            Store(initialState: FeedState(), reducer: reducer, effect: effect)
+        }
+    }
 }
 
 #if DEBUG
@@ -30,7 +56,7 @@ extension FeedViewModel {
             let items = listing!.children.map { child -> FeedViewModel.FeedItem in
                 .reddit(child.toFeedRedditViewModel())
             }
-            return .init(createStore: mockStore, items: items)
+            return .init(items: items, createStore: mockStore)
         }
 
         static var mockStore: CreateStore {
