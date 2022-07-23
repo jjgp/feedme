@@ -41,6 +41,9 @@ extension FeedViewController {
         addSubviews()
         addConstraints()
         viewModel.fetchItems()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.viewModel.fetchItems()
+        }
     }
 }
 
