@@ -31,9 +31,22 @@ struct HTTPRequest<Response: Decodable> {
 struct HTTP {
     let host: URL
     let session: URLSession
+
+    init(host: URL, session: URLSession = .shared) {
+        self.host = host
+        self.session = session
+    }
+
+    init(host: String, session: URLSession = .shared) throws {
+        guard let host = URL(string: host) else {
+            throw URLError(.badURL)
+        }
+
+        self.init(host: host, session: session)
+    }
 }
 
-private extension HTTP {
+extension HTTP {
     func urlRequest<T>(from request: HTTPRequest<T>) throws -> URLRequest {
         var components = URLComponents()
         components.path = request.path
