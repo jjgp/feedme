@@ -7,7 +7,7 @@ typealias FeedContextEffect = ContextEffect<FeedState, FeedAction, FeedContext>
 
 extension ContextEffect where S == FeedState, A == FeedAction, Context == FeedContext {
     static func fetchListing() -> Self {
-        .publisher { transitionPublisher, context -> AnyPublisher<A, Never> in
+        .publisher { transitionPublisher, context in
             transitionPublisher
                 .compactMap { transition -> HTTPRequest<RedditModel.Listing>? in
                     if case .fetchListing = transition.action {
