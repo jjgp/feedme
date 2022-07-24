@@ -83,7 +83,7 @@ extension HTTP {
                 }
                 return element.data
             }
-            .decode(type: T.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: JSONDecoder()) // The decoder could be extracted out
             .eraseToAnyPublisher()
     }
 }

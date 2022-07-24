@@ -3,20 +3,21 @@ import Foundation
 import Roots
 
 typealias FeedEffect = Effect<FeedState, FeedAction>
+typealias FeedContextEffect = ContextEffect<FeedState, FeedAction, FeedContext>
 
-extension Effect where S == FeedState, A == FeedAction {
-    static func fetchListing(with environment: FeedEnvironment) -> Self {
-        .publisher(of: environment) { transitionPublisher, _ -> AnyPublisher<A, Never> in
+extension ContextEffect where S == FeedState, A == FeedAction, Context == FeedContext {
+    static func fetchListing() -> Self {
+        .publisher { transitionPublisher, context -> AnyPublisher<A, Never> in
             transitionPublisher
                 .compactMap { transition -> HTTPRequest<RedditModel.Listing>? in
                     if case .fetchListing = transition.action {
-                        return .init(method: .get, path: ".json")
+                        return RedditRequest.listing()
                     } else {
                         return nil
                     }
                 }
                 .map { request in
-                    environment.http.requestPublisher(for: request)
+                    context.http.requestPublisher(for: request)
                 }
                 .switchToLatest()
                 .map { listing in
@@ -25,7 +26,7 @@ extension Effect where S == FeedState, A == FeedAction {
                 .catch { _ in
                     Just(FeedAction.fetchListingErrored)
                 }
-                .receive(on: environment.mainQueue)
+                .receive(on: context.mainQueue)
                 .eraseToAnyPublisher()
         }
     }

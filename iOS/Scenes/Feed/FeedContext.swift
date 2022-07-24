@@ -1,6 +1,6 @@
 import Foundation
 
-struct FeedEnvironment {
+struct FeedContext {
     let http: HTTP
     let mainQueue: DispatchQueue
 }

@@ -8,10 +8,14 @@ class FeedViewModel: ObservableObject {
 
     init(items: [FeedItem] = [], createStore: CreateStore) {
         self.items = items
-        let http = HTTP(host: URL(string: "http://reddit.com")!, session: .shared)
+        let context = FeedContext(
+            http: HTTP(host: URL(string: "http://reddit.com")!),
+            mainQueue: .main
+        )
+        let effect = combine(context: context, with: FeedContextEffect.fetchListing())
         store = createStore(
             feedReducer(state:action:),
-            .fetchListing(with: FeedEnvironment(http: http, mainQueue: .main))
+            effect
         )
         store.sink { [weak self] newState in
             self?.items = newState
