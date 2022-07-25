@@ -1,6 +1,6 @@
 import Roots
 
-enum FeedAction: Action {
+enum FeedAction {
     case fetchListing
     case fetchListingErrored
     case pushListing(RedditModel.Listing)

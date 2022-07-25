@@ -9,7 +9,7 @@ class FeedViewModel: ObservableObject {
     init(items: [FeedItem] = [], createStore: CreateStore) {
         self.items = items
         let context = FeedContext(
-            http: HTTP(host: URL(string: "http://reddit.com")!),
+            http: HTTP(host: URL(string: "https://reddit.com")!),
             mainQueue: .main
         )
         let effect = combine(context: context, with: FeedContextEffect.fetchListing())

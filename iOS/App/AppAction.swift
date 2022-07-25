@@ -1,3 +1,3 @@
 import Roots
 
-enum AppAction: Action {}
+enum AppAction {}
