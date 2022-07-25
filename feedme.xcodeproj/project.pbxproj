@@ -237,18 +237,18 @@
 			isa = PBXGroup;
 			children = (
 				D2C8A0C1288AE4CD0079FCAC /* HTTP.swift */,
-				D2B76947288A14F50034E078 /* Models */,
+				D2B76947288A14F50034E078 /* Model */,
 				D2C8A0C3288B2CAF0079FCAC /* Request */,
 			);
 			path = API;
 			sourceTree = "<group>";
 		};
-		D2B76947288A14F50034E078 /* Models */ = {
+		D2B76947288A14F50034E078 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D2B7694B288A151F0034E078 /* RedditModel.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D2B7694D288A210E0034E078 /* App */ = {
@@ -265,18 +265,18 @@
 		D2B76952288A807E0034E078 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D2B76953288A80860034E078 /* Models */,
+				D2B76953288A80860034E078 /* Model */,
 				D26B2A79288C28F40018B594 /* HTTPTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
 		};
-		D2B76953288A80860034E078 /* Models */ = {
+		D2B76953288A80860034E078 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D2B76954288A80980034E078 /* RedditModelTests.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D2C8A0B9288AC1A00079FCAC /* Scenes */ = {
