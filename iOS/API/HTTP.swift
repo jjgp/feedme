@@ -28,6 +28,8 @@ struct HTTPRequest<Response: Decodable> {
 
 // MARK: HTTP
 
+protocol DataTaskProvider {}
+
 struct HTTP {
     let host: URL
     let session: URLSession

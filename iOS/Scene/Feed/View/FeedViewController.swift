@@ -18,11 +18,13 @@ class FeedViewController: UIViewController {
 
     private var viewModel: FeedViewModel!
 
-    init(viewModel: FeedViewModel = .live()) {
-        super.init(nibName: nil, bundle: nil)
+    init(viewModel: FeedViewModel) {
         self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+
         subscription = viewModel.objectWillChange.sink { [weak self] _ in
-            // This isn't correct
+            // TODO: this isn't correct
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }

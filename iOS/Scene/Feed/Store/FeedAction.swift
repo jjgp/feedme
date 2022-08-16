@@ -1,5 +1,3 @@
-import Roots
-
 enum FeedAction {
     case fetchListing
     case fetchListingErrored

@@ -11,6 +11,7 @@
 		D202D6B72882D12100EE3224 /* I18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202D6B62882D12100EE3224 /* I18n.swift */; };
 		D202D6B92882D26000EE3224 /* FeedRedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */; };
 		D202D6C02882D44700EE3224 /* I18n+Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202D6BF2882D44700EE3224 /* I18n+Feed.swift */; };
+		D229C7B428AC534900341CA9 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D229C7B328AC534900341CA9 /* FeedCoordinator.swift */; };
 		D26B2A7A288C28F40018B594 /* HTTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B2A79288C28F40018B594 /* HTTPTests.swift */; };
 		D27C73E528846F01003658CD /* FeedRedditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C73E428846F01003658CD /* FeedRedditViewModel.swift */; };
 		D27C73E728847B02003658CD /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C73E628847B02003658CD /* FeedViewModel.swift */; };
@@ -27,11 +28,8 @@
 		D2B53DC1286B1EF8001E0A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */; };
 		D2B769452889D16B0034E078 /* UITableView+DequeReusableCellOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B769442889D16B0034E078 /* UITableView+DequeReusableCellOfType.swift */; };
 		D2B7694C288A151F0034E078 /* RedditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7694B288A151F0034E078 /* RedditModel.swift */; };
-		D2B7694F288A21520034E078 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7694E288A21520034E078 /* AppEnvironment.swift */; };
-		D2B76951288A215A0034E078 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B76950288A215A0034E078 /* AppState.swift */; };
 		D2B76955288A80980034E078 /* RedditModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B76954288A80980034E078 /* RedditModelTests.swift */; };
 		D2C8A0B0288A88850079FCAC /* FeedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0AF288A88850079FCAC /* FeedState.swift */; };
-		D2C8A0B2288A8E280079FCAC /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B1288A8E280079FCAC /* AppAction.swift */; };
 		D2C8A0B4288A8E530079FCAC /* FeedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B3288A8E530079FCAC /* FeedAction.swift */; };
 		D2C8A0B6288ABEBC0079FCAC /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */; };
 		D2C8A0B8288AC02D0079FCAC /* FeedEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */; };
@@ -40,7 +38,6 @@
 		D2C8A0C0288ACAB50079FCAC /* FeedContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0BF288ACAB50079FCAC /* FeedContext.swift */; };
 		D2C8A0C2288AE4CD0079FCAC /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0C1288AE4CD0079FCAC /* HTTP.swift */; };
 		D2C8A0C5288B2CBD0079FCAC /* RedditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8A0C4288B2CBD0079FCAC /* RedditRequest.swift */; };
-		D2F7A317286F04C400E01035 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7A316286F04C400E01035 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +61,7 @@
 		D202D6B62882D12100EE3224 /* I18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18n.swift; sourceTree = "<group>"; };
 		D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRedditTableViewCell.swift; sourceTree = "<group>"; };
 		D202D6BF2882D44700EE3224 /* I18n+Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "I18n+Feed.swift"; sourceTree = "<group>"; };
+		D229C7B328AC534900341CA9 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		D26B2A79288C28F40018B594 /* HTTPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTests.swift; sourceTree = "<group>"; };
 		D27C73E428846F01003658CD /* FeedRedditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRedditViewModel.swift; sourceTree = "<group>"; };
 		D27C73E628847B02003658CD /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
@@ -84,11 +82,8 @@
 		D2B53DC0286B1EF8001E0A55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2B769442889D16B0034E078 /* UITableView+DequeReusableCellOfType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+DequeReusableCellOfType.swift"; sourceTree = "<group>"; };
 		D2B7694B288A151F0034E078 /* RedditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditModel.swift; sourceTree = "<group>"; };
-		D2B7694E288A21520034E078 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		D2B76950288A215A0034E078 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D2B76954288A80980034E078 /* RedditModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditModelTests.swift; sourceTree = "<group>"; };
 		D2C8A0AF288A88850079FCAC /* FeedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedState.swift; sourceTree = "<group>"; };
-		D2C8A0B1288A8E280079FCAC /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		D2C8A0B3288A8E530079FCAC /* FeedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAction.swift; sourceTree = "<group>"; };
 		D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
 		D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEffect.swift; sourceTree = "<group>"; };
@@ -97,7 +92,6 @@
 		D2C8A0BF288ACAB50079FCAC /* FeedContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContext.swift; sourceTree = "<group>"; };
 		D2C8A0C1288AE4CD0079FCAC /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		D2C8A0C4288B2CBD0079FCAC /* RedditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditRequest.swift; sourceTree = "<group>"; };
-		D2F7A316286F04C400E01035 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +129,36 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		D229C7B728AC5D9000341CA9 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8A0B3288A8E530079FCAC /* FeedAction.swift */,
+				D2C8A0BF288ACAB50079FCAC /* FeedContext.swift */,
+				D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */,
+				D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */,
+				D2C8A0AF288A88850079FCAC /* FeedState.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		D229C7B828AC5DFF00341CA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */,
+				D2B53D90286B1196001E0A55 /* FeedViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D229C7B928AC5E2F00341CA9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D27C73E428846F01003658CD /* FeedRedditViewModel.swift */,
+				D27C73E628847B02003658CD /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D285B736286B31ED000E7257 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,16 +191,15 @@
 		D2B53D8B286B1196001E0A55 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2B76946288A14E90034E078 /* API */,
-				D2B7694D288A210E0034E078 /* App */,
-				D2B53D8C286B1196001E0A55 /* AppDelegate.swift */,
-				D2B53D95286B1197001E0A55 /* Assets.xcassets */,
 				D2B53D9A286B1197001E0A55 /* Info.plist */,
+				D2B53D8C286B1196001E0A55 /* AppDelegate.swift */,
+				D2B53D8E286B1196001E0A55 /* SceneDelegate.swift */,
+				D2B53D95286B1197001E0A55 /* Assets.xcassets */,
+				D2B76946288A14E90034E078 /* API */,
 				D2B53D97286B1197001E0A55 /* LaunchScreen.storyboard */,
 				D202D6B52882D10F00EE3224 /* Localization */,
 				D2B53DBF286B1ED1001E0A55 /* Preview Content */,
-				D2B53D8E286B1196001E0A55 /* SceneDelegate.swift */,
-				D2B769422889CD210034E078 /* Scenes */,
+				D2B769422889CD210034E078 /* Scene */,
 				D285B736286B31ED000E7257 /* Views */,
 			);
 			path = iOS;
@@ -209,26 +232,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D2B769422889CD210034E078 /* Scenes */ = {
+		D2B769422889CD210034E078 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				D2B769432889CD2B0034E078 /* Feed */,
 			);
-			path = Scenes;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		D2B769432889CD2B0034E078 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				D2C8A0B3288A8E530079FCAC /* FeedAction.swift */,
-				D2C8A0B7288AC02D0079FCAC /* FeedEffect.swift */,
-				D2C8A0BF288ACAB50079FCAC /* FeedContext.swift */,
-				D202D6B82882D26000EE3224 /* FeedRedditTableViewCell.swift */,
-				D27C73E428846F01003658CD /* FeedRedditViewModel.swift */,
-				D2C8A0B5288ABEBC0079FCAC /* FeedReducer.swift */,
-				D2C8A0AF288A88850079FCAC /* FeedState.swift */,
-				D2B53D90286B1196001E0A55 /* FeedViewController.swift */,
-				D27C73E628847B02003658CD /* FeedViewModel.swift */,
+				D229C7B328AC534900341CA9 /* FeedCoordinator.swift */,
+				D229C7B728AC5D9000341CA9 /* Store */,
+				D229C7B828AC5DFF00341CA9 /* View */,
+				D229C7B928AC5E2F00341CA9 /* ViewModel */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -249,17 +267,6 @@
 				D2B7694B288A151F0034E078 /* RedditModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		D2B7694D288A210E0034E078 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				D2C8A0B1288A8E280079FCAC /* AppAction.swift */,
-				D2B7694E288A21520034E078 /* AppEnvironment.swift */,
-				D2B76950288A215A0034E078 /* AppState.swift */,
-				D2F7A316286F04C400E01035 /* Store.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		D2B76952288A807E0034E078 /* API */ = {
@@ -450,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D229C7B428AC534900341CA9 /* FeedCoordinator.swift in Sources */,
 				D2B53D91286B1196001E0A55 /* FeedViewController.swift in Sources */,
 				D27C73E528846F01003658CD /* FeedRedditViewModel.swift in Sources */,
 				D2C8A0B8288AC02D0079FCAC /* FeedEffect.swift in Sources */,
@@ -458,15 +466,11 @@
 				D2ABAE282883560F00B43776 /* IntrinsicContentSizeWrapper.swift in Sources */,
 				D2C8A0C0288ACAB50079FCAC /* FeedContext.swift in Sources */,
 				D2ABAE2A28843B3D00B43776 /* UIKit+PreviewProvider.swift in Sources */,
-				D2B7694F288A21520034E078 /* AppEnvironment.swift in Sources */,
 				D202D6C02882D44700EE3224 /* I18n+Feed.swift in Sources */,
 				D2ABAE2C2884428500B43776 /* UIView+Constraints.swift in Sources */,
-				D2B76951288A215A0034E078 /* AppState.swift in Sources */,
 				D2B7694C288A151F0034E078 /* RedditModel.swift in Sources */,
 				D2C8A0C2288AE4CD0079FCAC /* HTTP.swift in Sources */,
 				D202D6B92882D26000EE3224 /* FeedRedditTableViewCell.swift in Sources */,
-				D2F7A317286F04C400E01035 /* Store.swift in Sources */,
-				D2C8A0B2288A8E280079FCAC /* AppAction.swift in Sources */,
 				D2B53D8D286B1196001E0A55 /* AppDelegate.swift in Sources */,
 				D2C8A0B4288A8E530079FCAC /* FeedAction.swift in Sources */,
 				D2C8A0B0288A88850079FCAC /* FeedState.swift in Sources */,
