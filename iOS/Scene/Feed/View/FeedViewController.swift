@@ -23,12 +23,12 @@ class FeedViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
 
-        subscription = viewModel.objectWillChange.sink { [weak self] _ in
-            // TODO: this isn't correct
-            DispatchQueue.main.async {
+        subscription = viewModel
+            .objectWillChange
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
                 self?.tableView.reloadData()
             }
-        }
     }
 
     @available(*, unavailable)
