@@ -12,10 +12,10 @@ class FeedViewModel: ObservableObject {
             http: HTTP(host: URL(string: "https://reddit.com")!),
             mainQueue: .main
         )
-        let effect = combine(context: context, with: FeedContextEffect.fetchListing())
+        let middleware = ApplyEffects(context: context, and: FeedContextEffect.fetchListing())
         store = createStore(
             feedReducer(state:action:),
-            effect
+            middleware
         )
         store.sink { [weak self] newState in
             self?.items = newState
@@ -32,7 +32,7 @@ class FeedViewModel: ObservableObject {
         case reddit(FeedRedditViewModel)
     }
 
-    typealias CreateStore = (@escaping FeedReducer, FeedEffect) -> Store<FeedState, FeedAction>
+    typealias CreateStore = (@escaping FeedReducer, Middleware<FeedState, FeedAction>) -> Store<FeedState, FeedAction>
 }
 
 extension FeedViewModel {
@@ -43,8 +43,8 @@ extension FeedViewModel {
 
 extension FeedViewModel {
     static func live() -> FeedViewModel {
-        .init { reducer, effect in
-            Store(initialState: FeedState(), reducer: reducer, effect: effect)
+        .init { reducer, middleware in
+            Store(initialState: FeedState(), reducer: reducer, middleware: middleware)
         }
     }
 }

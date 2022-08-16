@@ -5,13 +5,14 @@ import Roots
 typealias FeedEffect = Effect<FeedState, FeedAction>
 typealias FeedContextEffect = ContextEffect<FeedState, FeedAction, FeedContext>
 
-extension ContextEffect where S == FeedState, Action == FeedAction, Context == FeedContext {
+extension ContextEffect where State == FeedState, Action == FeedAction, Context == FeedContext {
     static func fetchListing() -> Self {
-        .publisher { transitionPublisher, context in
-            transitionPublisher
-                .compactMap { transition -> HTTPRequest<RedditModel.Listing>? in
-                    if case .fetchListing = transition.action {
-                        let after = transition.state.listings.last?.after
+        .init { states, actions, context in
+            states
+                .zip(actions)
+                .compactMap { state, action -> HTTPRequest<RedditModel.Listing>? in
+                    if case .fetchListing = action {
+                        let after = state.listings.last?.after
                         return RedditRequest.listing(after: after)
                     } else {
                         return nil

@@ -1,5 +1,5 @@
 import Roots
 
-struct AppState: State {
+struct AppState {
     let feed: FeedState
 }

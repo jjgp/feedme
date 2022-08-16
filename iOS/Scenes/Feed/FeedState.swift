@@ -1,6 +1,6 @@
 import Roots
 
-struct FeedState: State {
+struct FeedState {
     var isFetching = false
     var listings: [RedditModel.Listing] = []
 }
